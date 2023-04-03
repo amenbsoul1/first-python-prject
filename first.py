@@ -136,15 +136,41 @@ elif num == '4b':
      print(s1_new)
 elif num == '4c':
     # write your answer for question 4c below
-    s = (input())
-    d = int(input())
-    l = (len(s))
-    D = []
-    for i in range(0, l + 1):
-        i = i * d
-        D.append(i)
-    for x in D:
-        print(s[x - 1], end="")
+    s1=input()
+    new_s1=""
+    v="aeiouAEIOU"#volwes
+    s1_list=[]
+    new_sentence=""
+    word=1
+    new_sentencea=""
+    for char in s1:
+        if char in v:
+            new_s1+="*"+char+"*"
+        else:new_s1+=char
+    s1_list=new_s1.split()
+    sentences=new_s1.split(", ")
+    for sentence in sentences:
+        for char in range(0,len(sentence)):
+            if sentence[char]==" ":
+                word+=1
+            if word % 2==0:
+                    new_sentence+=sentence[char].upper()
+            else:new_sentence+=sentence[char].lower()
+        word=1
+        new_sentence+=", "
+    sentences=new_sentence.split(", ")
+    sentences.remove("") #because we add ", " in the last of the sences
+    for sentence in range(len(sentences)):
+        new_sentence=str(sentences[sentence])
+        new_sentence=new_sentence.split()
+        new_sentence.sort()
+        new_sentence.reverse()
+        for i in range(len(new_sentence)):
+            if i!=len(new_sentencea)-1:
+                new_sentencea+=new_sentence[i]+" "
+            elif sentence != (len(sentences)-1):
+                new_sentencea+=","
+    print(new_sentencea)")
 else:
      print('error')
 
