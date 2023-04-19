@@ -37,7 +37,7 @@ elif num == '2a':
         print("1")
     else:
         for i in range(1,n+1):
-            if i>a0 and i % d == 0:
+            if i>=a0 and i % d == 0:
                 fact=fact*i
     print(fact)
 elif num == '2b':
@@ -109,7 +109,7 @@ elif num == '4a':
       d = int(input())
       i = 1
       a_new = ""
-      while i < len(a):
+      while i < len(a)+1 :
           if i % d != 0:
               a_new = a_new + a[i - 1]
           i += 1
